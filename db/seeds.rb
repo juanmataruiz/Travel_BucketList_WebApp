@@ -1,9 +1,9 @@
 require_relative( "../models/city.rb" )
 require_relative( "../models/country.rb" )
-require_relative( "../models/visit.rb" )
+require_relative( "../models/journey.rb" )
 require("pry")
 
-Visit.delete_all()
+Journey.delete_all()
 City.delete_all()
 Country.delete_all()
 
@@ -54,19 +54,19 @@ city4.save()
 city5.save()
 city6.save()
 
-visit1 = Visit.new({
+journey1 = Journey.new({
   "country_id" => country1.id(),
   "city_id" => city1.id()
   })
-visit2 = Visit.new({
+journey2 = Journey.new({
   "country_id" => country2.id(),
   "city_id" => city2.id()
   })
-visit3 = Visit.new({
+journey3 = Journey.new({
   "country_id" => country3.id(),
   "city_id" => city3.id()
   })
 
-visit1.save()
-visit2.save()
-visit3.save()
+journey1.save()
+journey2.save()
+journey3.save()

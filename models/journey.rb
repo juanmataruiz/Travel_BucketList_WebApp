@@ -1,6 +1,6 @@
 require_relative( '../db/sql_runner' )
 
-class Visit
+class Journey
 
   attr_reader( :country_id, :city_id, :id )
 
@@ -11,7 +11,7 @@ class Visit
   end
 
   def save()
-    sql = "INSERT INTO visits
+    sql = "INSERT INTO journeys
     (
       country_id,
       city_id
@@ -27,9 +27,9 @@ class Visit
   end
 
   def self.all()
-    sql = "SELECT * FROM visits"
+    sql = "SELECT * FROM journeys"
     results = SqlRunner.run( sql )
-    return results.map { |visit| Visit.new( visit ) }
+    return results.map { |journey| Journey.new( journey ) }
   end
 
   def city()
@@ -47,19 +47,19 @@ class Visit
   end
 
   def self.find( id )
-    sql = "SELECT * FROM visits WHERE id = $1"
+    sql = "SELECT * FROM journeys WHERE id = $1"
     values = [id]
     results = SqlRunner.run( sql, values )
-    return Visit.new( results.first )
+    return Journey.new( results.first )
   end
 
   def self.delete_all
-    sql = "DELETE FROM visits"
+    sql = "DELETE FROM journeys"
     SqlRunner.run( sql )
   end
 
   def self.destroy(id)
-    sql = "DELETE FROM visits WHERE id = $1"
+    sql = "DELETE FROM journeys WHERE id = $1"
     values = [id]
     SqlRunner.run( sql, values )
   end

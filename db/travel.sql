@@ -1,4 +1,4 @@
-DROP TABLE visits;
+DROP TABLE journeys;
 DROP TABLE cities;
 DROP TABLE countries;
 
@@ -13,8 +13,8 @@ CREATE TABLE cities(
   country_id INT4 REFERENCES countries(id) ON DELETE CASCADE
 );
 
-CREATE TABLE visits(
+CREATE TABLE journeys(
   id serial8 PRIMARY KEY,
   city_id INT8 references cities(id),
-  country_id INT8 references countries(id) ON DELETE CASCADE
+  country_id INT8 references countries(id) ON DELETE CASCADE -- inner join and take out the country id
 );
