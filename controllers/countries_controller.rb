@@ -12,8 +12,19 @@ get '/countries/:id' do
   erb(:"country/show")
 end
 
-post '/country' do
+post '/countries' do
   country = Country.new(params)
   country.save
-  redirect to("/country")
+  redirect to ("/countries")
+end
+
+post '/countries/:id/update' do
+  Country.new( params ).update
+  redirect to ('/countries')
+end
+
+post '/countries/:id/delete' do
+  country = Country.find( params[:id] )
+  country.delete()
+  redirect to ('/countries')
 end

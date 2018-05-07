@@ -24,7 +24,21 @@ class Country
       values = [@name]
       results = SqlRunner.run(sql, values)
       @id = results.first()['id'].to_i
-    end
+  end
+
+  def update()
+    sql = "UPDATE countries
+    SET
+    (
+    name
+    ) =
+    (
+      $1
+    )
+    WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run( sql, values )
+  end
 
   def self.all()
     sql = "SELECT * FROM countries"
@@ -33,7 +47,7 @@ class Country
   end
 
   def self.find( id )
-    sql = "SELECT * FROM counties WHERE id = $1"
+    sql = "SELECT * FROM countries WHERE id = $1"
     values = [id]
     results = SqlRunner.run( sql, values )
     return Country.new( results.first )
