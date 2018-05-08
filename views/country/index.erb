@@ -1,5 +1,14 @@
 <h3>List of countries:</h3>
 
+<form action="/countries" method="post">
+  <label for="country-field">Name:</label>
+  <input type="text" name="name" id="country-field" placeholder="Enter country"/>
+
+  <input type="submit" value="Add country">
+
+</form>
+
+
 <ul>
   <% for country in @countries %>
   <li>
@@ -8,8 +17,8 @@
       <form action="/countries/<%= country.id %>/delete" method="post">
         <input class="btn btn--remove" type="submit" value="delete" />
       </form>
-      <form action="/countries/<%= country.id %>/update" method="post">
-        <input class="btn btn--add" type='submit' value="Edit">
+      <form action="/countries/<%= country.id %>" method="get">
+        <input class="btn btn--edit" type='submit' value="edit">
       </form>
     </p>
   </li>

@@ -70,3 +70,6 @@ journey3 = Journey.new({
 journey1.save()
 journey2.save()
 journey3.save()
+
+binding.pry
+nil

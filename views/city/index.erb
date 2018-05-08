@@ -1,0 +1,35 @@
+<h3>List of cities:</h3>
+
+<a href="/cities/new"> Create new city </a>
+
+<form action="/cities" method="post">
+  <label for="city-field">Name:</label>
+  <input type="text" name="name" id="city-field" placeholder="Enter city"/>
+
+  <label for="country-fild">Select country:</label>
+      <select name="country_id" id="country-field">
+        <% @countries.each do |country| %>
+            <option value=<%= country.id %>><%= country.name.capitalize %></option>
+        <% end %>
+      </select>
+
+  <input type="submit" value="Add city">
+
+</form>
+
+
+<ul>
+  <% for city in @cities %>
+  <li>
+  <p> <%= city.name %> </p>
+    <p>
+      <form action="/cities/<%= city.id %>/delete" method="post">
+        <input class="btn btn--remove" type="submit" value="delete" />
+      </form>
+      <form action="/cities/<%= city.id %>" method="get">
+        <input class="btn btn--edit" type='submit' value="edit">
+      </form>
+    </p>
+  </li>
+  <% end %>
+</ul>

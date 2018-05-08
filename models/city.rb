@@ -12,19 +12,26 @@ class City
   end
 
   def save()
-      sql = "INSERT INTO cities
-      (
-        name,
-        country_id
-      )
-      VALUES
-      (
-        $1, $2
-      )
-      RETURNING id"
-      values = [@name, @country_id]
-      results = SqlRunner.run(sql, values)
-      @id = results.first()['id'].to_i
+    sql = "INSERT INTO cities
+    (
+      name,
+      country_id
+    )
+    VALUES
+    (
+      $1, $2
+    )
+    RETURNING id"
+    values = [@name, @country_id]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
+  end
+
+  def update()
+    sql = "UPDATE cities SET ( name, country_id ) = ( $1, $2 )
+    WHERE id = $3"
+    values = [@name, @country_id, @id]
+    SqlRunner.run( sql, values )
   end
 
   def self.all()
@@ -43,6 +50,12 @@ class City
   def self.delete_all
     sql = "DELETE FROM cities"
     SqlRunner.run( sql )
+  end
+
+  def delete
+    sql = "DELETE FROM cities WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
   end
 
 end

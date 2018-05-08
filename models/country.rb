@@ -14,7 +14,6 @@ class Country
       sql = "INSERT INTO countries
       (
         name
-
       )
       VALUES
       (
@@ -27,15 +26,7 @@ class Country
   end
 
   def update()
-    sql = "UPDATE countries
-    SET
-    (
-    name
-    ) =
-    (
-      $1
-    )
-    WHERE id = $2"
+    sql = "UPDATE countries SET name = $1 WHERE id = $2"
     values = [@name, @id]
     SqlRunner.run( sql, values )
   end
@@ -56,6 +47,12 @@ class Country
   def self.delete_all
     sql = "DELETE FROM countries"
     SqlRunner.run( sql )
+  end
+
+  def delete
+    sql = "DELETE FROM countries WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
   end
 
 end

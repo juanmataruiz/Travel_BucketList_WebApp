@@ -1,30 +1,35 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/country.rb' )
+require("pry")
+
 
 get '/countries' do
   @countries = Country.all()
   erb ( :"country/index" )
 end
 
+
+
 get '/countries/:id' do
   @country = Country.find(params['id'].to_i)
-  erb(:"country/show")
+  erb(:"country/edit")
 end
 
-post '/countries' do
-  country = Country.new(params)
-  country.save
-  redirect to ("/countries")
+post '/countries' do # create
+  @country = Country.new( params )
+  @country.save()
+  redirect to ('/countries')
 end
 
 post '/countries/:id/update' do
-  Country.new( params ).update
+  @country = Country.new( params )
+  @country.update()
   redirect to ('/countries')
 end
 
 post '/countries/:id/delete' do
-  country = Country.find( params[:id] )
-  country.delete()
+  @country = Country.find( params[:id] )
+  @country.delete()
   redirect to ('/countries')
 end
