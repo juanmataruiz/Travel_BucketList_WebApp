@@ -8,11 +8,12 @@
 
 </form>
 
+<a href="/countries/visited">Country where you hava alraedy been</a>
 
 <ul>
   <% for country in @countries %>
   <li>
-  <p> <%= country.name %> </p>
+    <p> <%= country.name %> </p>
     <p>
       <form action="/countries/<%= country.id %>/delete" method="post">
         <input class="btn btn--remove" type="submit" value="delete" />

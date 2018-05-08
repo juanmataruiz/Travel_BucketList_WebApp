@@ -15,6 +15,5 @@ CREATE TABLE cities(
 
 CREATE TABLE journeys(
   id serial8 PRIMARY KEY,
-  city_id INT8 references cities(id) ON DELETE CASCADE,
-  country_id INT8 references countries(id) ON DELETE CASCADE -- inner join and take out the country id
+  city_id INT8 references cities(id) ON DELETE CASCADE
 );

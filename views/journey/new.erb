@@ -1,0 +1,12 @@
+<form action="/journeys" method="post">
+
+  <label for="journey-field">Where do you want to go next?:</label>
+  <select name="city_id" id="journey-field">
+    <% @cities.each do |city| %>
+    <option value=<%= city.id %>><%= city.name().capitalize() %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Add journey">
+
+</form>

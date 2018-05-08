@@ -1,0 +1,9 @@
+<h3>These are your journeys:</h3>
+
+<a href="/journeys/new">Add a new journey</a>
+
+<% @journeys.each do |journey|  %>
+<p>Country: <%= journey.city().country().name()  %></p>
+<p>City: <%= journey.city().name()  %></p>
+<hr>
+<% end  %>

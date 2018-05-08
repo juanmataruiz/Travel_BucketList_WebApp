@@ -2,28 +2,38 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry' )
 require_relative( '../models/journey.rb' )
-require_relative( '../models/city.rb' )
-require_relative( '../models/country.rb' )
 
 
 get '/journeys' do
-  @journeys = Journey.all
+  @journeys = Journey.all()
   erb ( :"journey/index" )
 end
 
 get '/journeys/new' do
-  @cities = City.all
-  @countries = Country.all
+  @countries = Country.all()
+  @cities = City.all()
   erb(:"journey/new")
 end
 
-post '/journeys' do
-  journey = Journey.new(params)
-  journey.save
-  redirect to "/"
+get '/journeys/:id' do
+  @journey = Journey.find(params['id'].to_i)
+  erb(:"city/edit")
+end
+
+post '/journeys' do # create
+  @journey = Journey.new( params )
+  @journey.save()
+  redirect to ('/journeys')
+end
+
+post '/journeys/:id/update' do
+  @journey = Journey.new( params )
+  @journey.update()
+  redirect to ('/journeys')
 end
 
 post '/journeys/:id/delete' do
-  Journey.destroy(params[:id])
-  redirect to("/journey")
+  @journey = Journey.find( params[:id] )
+  @journey.delete()
+  redirect to ('/journeys')
 end

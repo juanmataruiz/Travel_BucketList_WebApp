@@ -55,4 +55,15 @@ class Country
     SqlRunner.run( sql, values )
   end
 
+  def self.countries_visited()
+    sql = "SELECT DISTINCT countries.*
+    FROM countries
+    INNER JOIN cities
+    ON countries.id = cities.country_id
+    INNER JOIN journeys
+    ON journeys.city_id = cities.id"
+    results = SqlRunner.run ( sql )
+    return Country.new (results.first)
+  end
+
 end

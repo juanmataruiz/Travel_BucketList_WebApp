@@ -55,15 +55,12 @@ city5.save()
 city6.save()
 
 journey1 = Journey.new({
-  "country_id" => country1.id(),
   "city_id" => city1.id()
   })
 journey2 = Journey.new({
-  "country_id" => country2.id(),
   "city_id" => city2.id()
   })
 journey3 = Journey.new({
-  "country_id" => country3.id(),
   "city_id" => city3.id()
   })
 

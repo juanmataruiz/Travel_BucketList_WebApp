@@ -1,0 +1,10 @@
+<h5>List of countries visited:</h5>
+<form action="/countries" method="get">
+  <ul>
+    <%for country in @countries  %>
+    <li>
+      <p> <%= country.countries_visited %></p>
+    </li>
+    <% end %>
+  </ul>
+</form>
