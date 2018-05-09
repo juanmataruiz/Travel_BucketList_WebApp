@@ -1,12 +1,17 @@
-<form action="/journeys" method="post">
+<div class="flex-row">
+  <div class="box-boder">
 
-  <label for="journey-field">Where do you want to go next?:</label>
-  <select name="city_id" id="journey-field">
-    <% @cities.each do |city| %>
-    <option value=<%= city.id %>><%= city.name().capitalize() %></option>
-    <% end %>
-  </select>
+    <form action="/journeys" method="post">
 
-  <input type="submit" value="Add journey">
+      <label for="journey-field">Where do you want to go next?:</label>
+      <select name="city_id" id="journey-field">
+        <% @cities.each do |city| %>
+        <option value=<%= city.id %>><%= city.name().capitalize() %></option>
+        <% end %>
+      </select>
 
-</form>
+      <input type="submit" value="Add journey">
+
+    </form>
+  </div>
+</div>

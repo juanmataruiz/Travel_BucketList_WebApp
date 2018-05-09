@@ -1,8 +1,13 @@
-<form action="/cities/<%= @city.id  %>/update" method="post">
-  <label for="city-field">Name:</label>
-  <input type="text" name="name" id="city-field" placeholder="Enter city"/>
-  <input class="hide" type="text" name="country_id" value= <%=@city.country_id %> >
+<div class="flex-row">
+  <div class="box-boder">
 
-  <input class="button" type="submit" value="Add city">
+    <form action="/cities/<%= @city.id  %>/update" method="post">
+      <label for="city-field">Name:</label>
+      <input type="text" name="name" id="city-field" placeholder="Enter city"/>
+      <input class="hide" type="text" name="country_id" value= <%=@city.country_id %> >
 
-</form>
+      <input class="button" type="submit" value="Add city">
+
+    </form>
+  </div>
+</div>
