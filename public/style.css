@@ -1,22 +1,47 @@
-.button {
-  color: blue;
-}
+
 body {
-  background-color: silver;
+  background-color: #58C9B9;
+  font-family: Roboto Mono;
 }
 
-#journeybutton {
-  display: inline-flex;
-  position: relative;
-  margin-left: 19em;
-  border: outset 4px white;
-  margin-bottom: 2em;
+#journey-link {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+#journey-image {
+  width: 100%;
+  height: 100%
 }
 
 h1 {
-  color: lime;
+  color: #519D9E;
   text-align: center;
   font-size: 6em;
   text-shadow: 0.03em 0.03em white;
   text-decoration: underline;
+}
+
+nav {
+  text-align: center;
+  margin-top: 2em;
+
+}
+
+nav a {
+  margin: 0.8em;
+  text-decoration: none;
+  font-size: 20px;
+  color: #492540;
+  font-weight: bold;
+  border: solid 3px black;
+  border-radius: 25px;
+  padding: 0.2em 1em 0.2em 1em;
+  border-color: white;
+}
+
+.views-index {
+  margin-top: 5em;
 }
