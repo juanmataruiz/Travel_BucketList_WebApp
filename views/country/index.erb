@@ -1,18 +1,21 @@
+<div class="views-index">
 
 
-<form action="/countries" method="post">
-  <label for="country-field">Name:</label>
-  <input type="text" name="name" id="country-field" placeholder="Enter country"/>
 
-  <input type="submit" value="Add country">
+  <form action="/countries" method="post">
+    <label for="country-field">Name:</label>
+    <input type="text" name="name" id="country-field" placeholder="Enter country"/>
 
-</form>
+    <input type="submit" value="Add country">
+
+  </form>
 
 
-<h3>List of countries:</h3>
-<ul>
+  <h3>List of countries:</h3>
+
   <% for country in @countries %>
-  <li>
+  <div class="box-boder">
+
     <p> <%= country.name %> </p>
     <p>
       <form action="/countries/<%= country.id %>/delete" method="post">
@@ -22,6 +25,8 @@
         <input class="btn btn--edit" type='submit' value="edit">
       </form>
     </p>
-  </li>
+  </div>
+
   <% end %>
-</ul>
+
+</div>

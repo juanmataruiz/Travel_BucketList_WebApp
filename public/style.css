@@ -60,13 +60,22 @@ a:visited {
 
 }
 
-.countries {
+.box-boder {
+  min-width: 18%;
+  max-width: 18%;
   border: solid 3px black;
   border-radius: 25px;
   padding: 0.2em 1em 0.2em 1em;
   border-color: white;
-  margin-right: 30em;
-  margin-left: 30em;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2em;
   margin-top: 2em;
+  flex: 1;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
