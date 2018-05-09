@@ -1,9 +1,9 @@
-<h5>List of countries visited:</h5>
+<h5>You have already been in these countries:</h5>
 <form action="/countries" method="get">
   <ul>
     <% for country in @countries  %>
     <li>
-      <p> Name: <%= country.name  %></p>
+      <p> <%= country.name  %></p>
     </li>
     <% end %>
   </ul>

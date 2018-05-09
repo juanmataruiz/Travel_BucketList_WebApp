@@ -4,3 +4,19 @@
 body {
   background-color: silver;
 }
+
+#journeybutton {
+  display: inline-flex;
+  position: relative;
+  margin-left: 19em;
+  border: outset 4px white;
+  margin-bottom: 2em;
+}
+
+h1 {
+  color: lime;
+  text-align: center;
+  font-size: 6em;
+  text-shadow: 0.03em 0.03em white;
+  text-decoration: underline;
+}
