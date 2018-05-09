@@ -72,7 +72,7 @@ a:visited {
 
 .box-boder {
   min-width: 18%;
-  max-width: 18%;
+  max-width: fit-content;
   border: solid 3px black;
   border-radius: 25px;
   padding: 0.2em 1em 0.5em 1em;
@@ -87,7 +87,7 @@ a:visited {
 .flex-row {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction:row;
 }
 
 .hide {

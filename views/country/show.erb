@@ -1,10 +1,19 @@
-<h5>You have already been in these countries:</h5>
-<form action="/countries" method="get">
-  <ul>
+<div class="views-index">
+
+  <h5>You have already been in these countries:</h5>
+
+  <form action="/countries" method="get">
+    <div class="flex-row">
+
     <% for country in @countries  %>
-    <li>
-      <p> <%= country.name  %></p>
-    </li>
+
+      <div class="box-boder">
+
+        <p> <%= country.name  %></p>
+
+      </div>
     <% end %>
-  </ul>
-</form>
+  </div>
+
+  </form>
+</div>
