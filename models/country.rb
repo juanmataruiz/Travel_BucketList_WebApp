@@ -63,7 +63,7 @@ class Country
     INNER JOIN journeys
     ON journeys.city_id = cities.id"
     results = SqlRunner.run ( sql )
-    return Country.new (results.first)
+    return results.map { |country| Country.new( country ) }
   end
 
 end

@@ -9,15 +9,17 @@ get '/countries' do
   erb ( :"country/index" )
 end
 
+get '/countries/visited' do
+  @countries = Country.countries_visited()
+
+  erb(:"country/show")
+end
+
 get '/countries/:id' do
   @country = Country.find(params['id'].to_i)
   erb(:"country/edit")
 end
 
-get '/countries/visited' do
-  @country = Country.countries_visited(params['id'].to_i)
-  erb(:"country/show")
-end
 
 post '/countries' do # create
   @country = Country.new( params )

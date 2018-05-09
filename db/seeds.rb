@@ -63,10 +63,14 @@ journey2 = Journey.new({
 journey3 = Journey.new({
   "city_id" => city3.id()
   })
+  # journey4 = Journey.new({
+  #   "city_id" => city5.id()
+  #   })
 
 journey1.save()
 journey2.save()
 journey3.save()
+
 
 binding.pry
 nil
