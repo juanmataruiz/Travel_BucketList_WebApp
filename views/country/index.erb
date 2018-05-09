@@ -13,20 +13,20 @@
 
   <h3>List of countries:</h3>
 
-  <% for country in @countries %>
-  <div class="box-boder">
+  <div class="flex-row">
 
-    <p> <%= country.name %> </p>
-    <p>
+    <% for country in @countries %>
+    <div class="box-boder">
+      <p> <%= country.name %> </p>
       <form action="/countries/<%= country.id %>/delete" method="post">
         <input class="btn btn--remove" type="submit" value="delete" />
       </form>
       <form action="/countries/<%= country.id %>" method="get">
         <input class="btn btn--edit" type='submit' value="edit">
       </form>
-    </p>
+    </div>
+    <% end %>
   </div>
 
-  <% end %>
 
 </div>
