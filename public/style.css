@@ -22,6 +22,7 @@ h1 {
   font-size: 6em;
   text-shadow: 0.03em 0.03em white;
   text-decoration: underline;
+  font-size: 1em;
 }
 
 #arrow{
@@ -37,7 +38,6 @@ h1 {
 nav {
   text-align: center;
   margin-top: 2em;
-
 }
 
 nav a {
@@ -67,7 +67,6 @@ a:visited {
   background-color: transparent;
   color: #492540;
   text-decoration: none;
-
 }
 
 .box-boder {
