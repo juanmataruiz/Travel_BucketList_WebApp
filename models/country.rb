@@ -44,12 +44,12 @@ class Country
     return Country.new( results.first )
   end
 
-  def self.delete_all
+  def self.delete_all()
     sql = "DELETE FROM countries"
     SqlRunner.run( sql )
   end
 
-  def delete
+  def delete()
     sql = "DELETE FROM countries WHERE id = $1"
     values = [@id]
     SqlRunner.run( sql, values )
@@ -67,5 +67,3 @@ class Country
   end
 
 end
-
- 

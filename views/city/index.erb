@@ -1,20 +1,6 @@
 <div class="views-index">
 
-  <p>Add a city to your bucklist</p>
-
-  <form action="/cities" method="post">
-    <label for="city-field">Name:</label>
-    <input type="text" name="name" id="city-field" placeholder="Enter city"/>
-
-    <label for="country-field">Select country:</label>
-    <select name="country_id" id="country-field">
-      <% @countries.each do |country| %>
-      <option value=<%= country.id %>><%= country.name.capitalize %></option>
-      <% end %>
-    </select>
-
-    <input type="submit" value="Add to list">
-  </form>
+  <%= erb(:"city/new") %>
 
   <h3>List of cities:</h3>
 
@@ -26,7 +12,7 @@
           <form action="/cities/<%= city.id %>/delete" method="post">
             <input class="btn btn--remove" type="submit" value="delete" />
           </form>
-          <form action="/cities/<%= city.id %>" method="get">
+          <form action="/cities/<%= city.id %>/edit" method="get">
             <input class="btn btn--edit" type='submit' value="edit">
           </form>
       </div>

@@ -1,9 +1,9 @@
 <div class="flex-row">
   <div class="box-boder">
 
-    <form action="/cities/<%= @city.id  %>/update" method="post">
+    <form action="/cities/<%= @city.id  %>" method="post">
       <label for="city-field">Name:</label>
-      <input type="text" name="name" id="city-field" placeholder="Enter city"/>
+      <input type="text" name="name" id="city-field" placeholder="Enter city" value=<%= @city.name %>>
       <input class="hide" type="text" name="country_id" value= <%=@city.country_id %> >
 
       <input class="button" type="submit" value="Add city">
