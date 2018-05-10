@@ -1,16 +1,13 @@
 <div class="views-index">
 
-  <h5>You have already been in these countries:</h5>
+  <h4>You have already been here:</h4>
 
   <form action="/countries" method="get">
     <div class="flex-row">
 
     <% for country in @countries  %>
-
       <div class="box-boder">
-
         <p> <%= country.name  %></p>
-
       </div>
     <% end %>
   </div>
